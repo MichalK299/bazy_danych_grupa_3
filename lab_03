@@ -1,0 +1,19 @@
+zadanie 5 
+1. insert into postac values (...);
+2. create table statek ...;
+3. insert into ...;
+4. alter table postac add column funckcja...;
+5. update postac...; 
+6.
+krok 1 - dodanie kolumny
+alter table postac add column statek varchar(50);
+krok 2 - dodanie klucza obcego
+alter table postac add foreign key (statek) references statek(nazwa_statku) on delete cascade;
+7. update postac set statek = statek_bjorna where id_postaci = 1;
+8. drop table izba;
+
+LAB_04
+1a. select * from postac order by wiek desc limit 2;
+    delete from postac where nazwa = 'Michal';
+1b. alter table postac drop primary key;
+    alter table postac modify id_postaci int;    
