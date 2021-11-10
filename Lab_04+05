@@ -1,0 +1,25 @@
+LAB 04.
+4.
+a) insert into postac values (default, 'loko', 'waz',  '2000-01-01', 21, null, null, null);
+
+b) create table marynarz like postac;
+-select nazwa from postac where statek!=null;
+-select * from postac where statek is not null;
+-insert into marynrz select *from postac where statek is not null;
+Sposób 2.
+create table marynarz select * from postac where statek is not null;
+
+c)alter table marynarz...
+
+5.
+d)create table zwierz (id int auto_increment primary key, nazwa varchar(40), rodzaj varchar(40), wiek int);
+insert into zwierz values (default, 'drozd', 'ptak', 20);
+insert into zwierz values (default, 'loko', 'waz', 21);
+ 
+LAB 05.
+1
+a) select idZasobu, nazwa from zasob where idZasobu in(3,5,7);
+-select dataUr,nazwa from kreatura order by dataUr asc limit 5;
+-select distinct rodzaj from creatura;
+-select concat('zasob',nazwa,'zostal pozyskany w miesiacu o numerze', month(datapozyskania)) from zasob;
+-select nazwa, rodzaj from kreatura where rodzaj like 'wi%';
