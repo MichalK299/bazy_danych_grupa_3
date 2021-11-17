@@ -1,0 +1,45 @@
+Zadanie 1.
+1.
+select sum(udzwig) from kreatura;
+select rodzaj, sum(udzwig) from kreatura group by rodzaj;
+select count(*) from kreatura;
+select count(distinct rodzaj) from kreatura;
+2.
+select avg(waga) from kreatura;
+select rodzaj, avg(waga) from kreatura group by rodzaj;
+select rodzaj, avg(waga), count(rodzaj) from kreatura group by rodzaj;
+3.
+select rodzaj, avg(year(now()) - year(dataUr))
+from kreatura group by rodzaj;
+
+Zadanie 2.
+select rodzaj, avg(waga) from kreatura group by
+rodzaj having avg(waga) > 50;
+1.
+select rodzaj,sum(waga) from zasob group by rodzaj;
+2.
+select nazwa, avg(waga) from zasob where ilosc >=4 group by 
+nazwa having avg(waga) > 10;
+3.
+select rodzaj, count(distinct nazwa) from zasob group by rodzaj 
+having min(ilosc) > 1;
+
+Zadanie 3.
+1.
+select * from kreatura, ekwipunek
+where kreatura.idKreatury=ekwipunek.idKreatury;
+select * from kreatura k, ekwipunek e
+where k.idKreatury=e.idKreatury;
+select * from kreatura k
+inner join ekwipunek e on k.idKreatury=e.idKreatury;
+2.
+select nazwa, sum(ilosc) from kreatura, ekwipunek where 
+kreatura.idKreatury=ekwipunek.idKreatury group by nazwa;
+3.
+select k.nazwa,z.nazwa from kreatura k
+INNER JOIN ekwipunek e ON k.idKreatury=e.idKreatury
+INNER JOIN zasob z ON e.idZasobu=z.idZasobu;
+
+select k.nazwa, k.idKreatury, e.idKreatury from kreatura k
+left join ekwipunek e on k.idKreatury=e.idKreatury
+where e.idKreatury is null;
