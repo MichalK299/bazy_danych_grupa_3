@@ -1,0 +1,13 @@
+lab 07
+zadanie 1.
+
+1.
+select * from kreatura k 
+left join uczestnicy u on k.idKreatury=u.id_uczestnika
+where u.id_uczestnika is null;
+
+2.
+select w.nazwa, sum(e.ilosc) from wyprawa w
+inner join uczestnicy u on w.id_wyprawy=z.id_wyprawy
+right join ekwipunek e on z.id_uczestnika=e.idKreatury
+group by w.id_wyprawy;
