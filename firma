@@ -1,0 +1,9 @@
+1. 
+select * from pracownik order by nazwisko;
+2.
+select imie, nazwisko, pensja from pracownik where year(data_urodzenia)>1979;
+3.
+SELECT * FROM pracownik WHERE pensja BETWEEN 3500 and 5000;
+4.
+select towar, ilosc from stan_magazynowy where ilosc>10;
+5.
