@@ -48,3 +48,18 @@ Zadanie 4.
 select id_wyprawy, sum(lenght(dziennik)) suma_dlugosci 
 from etapy_wyprawy group by id_wyprawy
 having suma_dlugosci < 400;
+
+select length("   ")
+select char_length("   ")
+select length(nazwa) + length(rodzaj) from kreatura;
+
+4.2
+
+select w.nazwa, sum(e.ilosc*z.waga)/ count(distinct u.id_uczestnika) from uczestnicy u 
+left join wyprawa w on w.id_wyprawy=u.id_wyprawy
+left join  kreatura k on k.idKreatury=u.id_uczestnika
+left join ekwipunek e on e.idKreatury=k.idKreatury
+left join zasob z on z.id.Zasobu=e.idZasobu
+group by w.id_wyprawy;
+
+
